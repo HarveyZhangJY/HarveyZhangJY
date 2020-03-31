@@ -13,7 +13,7 @@ def h(z):
     return f"{z:,.2f}"
 
 
-print("欢迎使用镐镐的个税计算器2019年沪版")
+print("欢迎使用镐镐的个税计算器沪版")
 a = float(input('请输入月薪:(单位:元)\n'))
 if a < 2420:
     print(Fore.RED + "你的工资已低于上海最低月工资标准2420元，赶紧找你的老板谈一谈吧!")
@@ -82,7 +82,7 @@ print("公积金帐户余额:", h(c / 0.175 * 0.14 * 12))
 print("医疗保险金帐户余额:", h(c / 0.175 * 0.115 * 12))
 print("养老金帐户余额:", h(c / 0.175 * 0.28 * 12))
 print("(单位:元)")
-name = '2019年度收入构成'+time.strftime("%Y%m%d%H%M%S", time.localtime())+'.xls'
+name = '年度收入构成'+time.strftime("%Y%m%d%H%M%S", time.localtime())+'.xls'
 wb.save(name)
-print(Fore.RED + "2019年度收入构成"+name+".xls 保存成功！")
+print(Fore.RED +name+" 保存成功！")
 ord(msvcrt.getch())
