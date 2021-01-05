@@ -3,29 +3,22 @@ import xlwt
 import xlutils.copy
 import os
 import time
-
-
 def a_in_b(a, b):
     for i in b:
         if a in i:
             return 0
     return 1
-
-
 def setOutCell(out_sheet, col, row, value):
     def _getOutCell(out_sheet_, colIndex, rowIndex):
         row = out_sheet_._Worksheet__rows.get(rowIndex)
         if not row: return None
         cell = row._Row__cells.get(colIndex)
         return cell
-
     previousCell = _getOutCell(out_sheet, col, row)
     out_sheet.write(row, col, value)
     if previousCell:
         newCell = _getOutCell(out_sheet, col, row)
         newCell.xf_idx = previousCell.xf_idx
-
-
 while 1:
     colour = 2
     continue_ = str(input(
